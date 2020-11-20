@@ -1,0 +1,137 @@
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker rm aipdocker 
+aipdocker
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>set /p version= 0<VERSION 
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker run --name aipdocker -it aip:0.1 
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799.8s
+INFO     translator memory limit: 2048 MB
+INFO     translator command line string: /usr/bin/python3 /src/fd/builds/release/bin/translate/translate.py ./domain.pddl ./problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.005s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.011s wall-clock]
+Preparing model... [0.000s CPU, 0.004s wall-clock]
+Generated 43 rules.
+Computing model... [0.100s CPU, 0.095s wall-clock]
+2274 relevant atoms
+1737 auxiliary atoms
+4011 final queue length
+8420 total queue pushes
+Completing instantiation... [0.160s CPU, 0.163s wall-clock]
+Instantiating: [0.270s CPU, 0.277s wall-clock]
+Computing fact groups...
+Finding invariants...
+16 initial candidates
+Finding invariants: [0.020s CPU, 0.022s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.002s wall-clock]
+Instantiating groups... [0.020s CPU, 0.016s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+27 uncovered facts
+Choosing groups: [0.010s CPU, 0.004s wall-clock]
+Building translation key... [0.000s CPU, 0.002s wall-clock]
+Computing fact groups: [0.050s CPU, 0.054s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.010s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.002s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.008s wall-clock]
+Translating task: [0.230s CPU, 0.231s wall-clock]
+2295 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+44 propositions removed
+Detecting unreachable propositions: [0.110s CPU, 0.112s wall-clock]
+Reordering and filtering variables...
+53 of 53 variables necessary.
+36 of 53 mutex groups necessary.
+1632 of 1632 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.050s CPU, 0.052s wall-clock]
+Translator variables: 53
+Translator derived variables: 0
+Translator facts: 438
+Translator goal facts: 11
+Translator mutex groups: 36
+Translator total mutex groups size: 516
+Translator operators: 1632
+Translator axioms: 0
+Translator task size: 15724
+Translator peak memory: 49520 KB
+Writing output... [0.060s CPU, 0.055s wall-clock]
+Done! [0.800s CPU, 0.803s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1798.71s
+INFO     search memory limit: 2048 MB
+INFO     search command line string: /src/fd/builds/release/bin/downward --search 'astar(add())' --internal-plan-file plan.txt < output.sas
+[t=0.000362493s, 55864 KB] reading input...
+[t=0.0132145s, 56812 KB] done reading input!
+[t=0.0161825s, 57628 KB] Simplifying 7572 unary operators... done! [7572 unary operators]
+[t=0.0261164s, 58156 KB] time to simplify: 0.0103779s
+[t=0.0272249s, 58156 KB] Initializing additive heuristic...
+[t=0.0274524s, 58156 KB] Building successor generator...done!
+[t=0.028605s, 58156 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0286522s, 58156 KB] time for successor generation creation: 0.000920738s
+[t=0.0287003s, 58156 KB] Variables: 53
+[t=0.0287472s, 58156 KB] FactPairs: 438
+[t=0.0288156s, 58156 KB] Bytes per state: 20
+[t=0.029023s, 58156 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0293792s, 58156 KB] New best heuristic value for add: 112
+[t=0.0294535s, 58156 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0295286s, 58156 KB] f = 112, 1 evaluated, 0 expanded
+[t=0.0296035s, 58156 KB] Initial heuristic value for add: 112
+[t=0.0296684s, 58156 KB] pruning method: none
+[t=0.0309098s, 58156 KB] f = 113, 8 evaluated, 1 expanded
+[t=0.0323168s, 58156 KB] f = 114, 17 evaluated, 3 expanded
+[t=0.0338287s, 58156 KB] f = 115, 24 evaluated, 5 expanded
+[t=0.0347057s, 58156 KB] f = 116, 27 evaluated, 6 expanded
+[t=0.0366951s, 58156 KB] f = 118, 36 evaluated, 10 expanded, 1 reopened
+[t=0.0369425s, 58156 KB] New best heuristic value for add: 109
+[t=0.0370706s, 58156 KB] g=2, 37 evaluated, 11 expanded, 1 reopened
+[t=0.0379634s, 58156 KB] New best heuristic value for add: 108
+[t=0.0381316s, 58156 KB] g=3, 40 evaluated, 12 expanded, 1 reopened
+[t=0.0459433s, 58156 KB] New best heuristic value for add: 105
+[t=0.0461586s, 58156 KB] g=6, 83 evaluated, 22 expanded, 2 reopened
+[t=0.0519541s, 58156 KB] New best heuristic value for add: 104
+[t=0.0521418s, 58156 KB] g=8, 119 evaluated, 28 expanded, 2 reopened
+[t=0.0540123s, 58156 KB] New best heuristic value for add: 103
+[t=0.0542287s, 58156 KB] g=9, 125 evaluated, 29 expanded, 2 reopened
+[t=0.168935s, 58156 KB] New best heuristic value for add: 97
+[t=0.169161s, 58156 KB] g=7, 794 evaluated, 188 expanded, 21 reopened
+[t=0.172998s, 58156 KB] New best heuristic value for add: 96
+[t=0.173176s, 58156 KB] g=9, 814 evaluated, 191 expanded, 21 reopened
+[t=0.183445s, 58156 KB] New best heuristic value for add: 94
+[t=0.183696s, 58156 KB] g=11, 864 evaluated, 199 expanded, 21 reopened
+[t=0.242134s, 58156 KB] New best heuristic value for add: 92
+[t=0.242252s, 58156 KB] g=11, 1158 evaluated, 250 expanded, 26 reopened
+[t=0.243627s, 58156 KB] New best heuristic value for add: 91
+[t=0.24373s, 58156 KB] g=12, 1165 evaluated, 251 expanded, 26 reopened
+[t=0.251975s, 58156 KB] New best heuristic value for add: 88
+[t=0.252194s, 58156 KB] g=13, 1204 evaluated, 255 expanded, 26 reopened
+[t=0.253484s, 58156 KB] New best heuristic value for add: 87
+[t=0.253557s, 58156 KB] g=14, 1210 evaluated, 256 expanded, 26 reopened
+[t=0.263122s, 58156 KB] New best heuristic value for add: 86
+[t=0.263295s, 58156 KB] g=17, 1271 evaluated, 264 expanded, 26 reopened
+[t=0.321812s, 58156 KB] New best heuristic value for add: 85
+[t=0.322095s, 58156 KB] g=17, 1582 evaluated, 311 expanded, 26 reopened
+[t=0.334495s, 58156 KB] New best heuristic value for add: 84
+[t=0.334612s, 58156 KB] g=20, 1633 evaluated, 319 expanded, 26 reopened
+[t=145.5s, 123240 KB] f = 119, 880492 evaluated, 391634 expanded, 208983 reopened
+[t=214.908s, 135760 KB] f = 120, 1295234 evaluated, 610358 expanded, 328046 reopened
+[t=284.116s, 154248 KB] f = 121, 1702898 evaluated, 806870 expanded, 421252 reopened
+[t=357.715s, 189908 KB] f = 122, 2132382 evaluated, 1003051 expanded, 502943 reopened
