@@ -42,7 +42,7 @@ Just console output redirected to the file🤷‍♂️
 
 #### Example
 
-```
+```log
 
 C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker rm aipdocker 
 aipdocker
