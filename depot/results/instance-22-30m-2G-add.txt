@@ -1,0 +1,149 @@
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker rm aipdocker 
+aipdocker
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>set /p version= 0<VERSION 
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker run --name aipdocker -it aip:0.1 
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799.82s
+INFO     translator memory limit: 2048 MB
+INFO     translator command line string: /usr/bin/python3 /src/fd/builds/release/bin/translate/translate.py ./domain.pddl ./problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.008s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.010s CPU, 0.004s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.009s wall-clock]
+Preparing model... [0.000s CPU, 0.006s wall-clock]
+Generated 43 rules.
+Computing model... [0.900s CPU, 0.902s wall-clock]
+24879 relevant atoms
+15231 auxiliary atoms
+40110 final queue length
+94708 total queue pushes
+Completing instantiation... [2.590s CPU, 2.587s wall-clock]
+Instantiating: [3.520s CPU, 3.523s wall-clock]
+Computing fact groups...
+Finding invariants...
+16 initial candidates
+Finding invariants: [0.030s CPU, 0.025s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.003s wall-clock]
+Instantiating groups... [0.070s CPU, 0.063s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.004s wall-clock]
+Choosing groups...
+90 uncovered facts
+Choosing groups: [0.020s CPU, 0.013s wall-clock]
+Building translation key... [0.000s CPU, 0.005s wall-clock]
+Computing fact groups: [0.140s CPU, 0.139s wall-clock]
+Building STRIPS to SAS dictionary... [0.010s CPU, 0.003s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.006s wall-clock]
+Building mutex information...
+Building mutex information: [0.010s CPU, 0.006s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.100s CPU, 0.102s wall-clock]
+Translating task: [2.760s CPU, 2.762s wall-clock]
+31360 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+116 propositions removed
+Detecting unreachable propositions: [1.610s CPU, 1.606s wall-clock]
+Reordering and filtering variables...
+101 of 101 variables necessary.
+75 of 101 mutex groups necessary.
+22252 of 22252 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.490s CPU, 0.495s wall-clock]
+Translator variables: 101
+Translator derived variables: 0
+Translator facts: 1642
+Translator goal facts: 18
+Translator mutex groups: 75
+Translator total mutex groups size: 2215
+Translator operators: 22252
+Translator axioms: 0
+Translator task size: 198132
+Translator peak memory: 161460 KB
+Writing output... [0.490s CPU, 0.483s wall-clock]
+Done! [9.120s CPU, 9.123s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1790.51s
+INFO     search memory limit: 2048 MB
+INFO     search command line string: /src/fd/builds/release/bin/downward --search 'astar(add())' --internal-plan-file plan.txt < output.sas
+[t=0.000300374s, 55864 KB] reading input...
+[t=0.141713s, 66532 KB] done reading input!
+[t=0.159337s, 72636 KB] Simplifying 97292 unary operators... done! [97292 unary operators]
+[t=0.425283s, 81500 KB] time to simplify: 0.266036s
+[t=0.429808s, 81500 KB] Initializing additive heuristic...
+[t=0.430034s, 81500 KB] Building successor generator...done!
+[t=0.442731s, 81500 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.442785s, 81500 KB] time for successor generation creation: 0.0125102s
+[t=0.443335s, 81500 KB] Variables: 101
+[t=0.443379s, 81500 KB] FactPairs: 1642
+[t=0.443494s, 81500 KB] Bytes per state: 36
+[t=0.443725s, 81500 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.447103s, 81500 KB] New best heuristic value for add: 102
+[t=0.447208s, 81500 KB] g=0, 1 evaluated, 0 expanded
+[t=0.447246s, 81500 KB] f = 102, 1 evaluated, 0 expanded
+[t=0.447356s, 81500 KB] Initial heuristic value for add: 102
+[t=0.447407s, 81500 KB] pruning method: none
+[t=0.452135s, 81500 KB] New best heuristic value for add: 101
+[t=0.452231s, 81500 KB] g=1, 3 evaluated, 1 expanded
+[t=0.700491s, 81500 KB] New best heuristic value for add: 100
+[t=0.700606s, 81500 KB] g=2, 128 evaluated, 2 expanded
+[t=0.860329s, 81500 KB] New best heuristic value for add: 99
+[t=0.86052s, 81500 KB] g=3, 206 evaluated, 3 expanded
+[t=1.02107s, 81500 KB] New best heuristic value for add: 98
+[t=1.02122s, 81500 KB] g=4, 285 evaluated, 4 expanded
+[t=1.1094s, 81500 KB] New best heuristic value for add: 97
+[t=1.10959s, 81500 KB] g=5, 330 evaluated, 5 expanded
+[t=1.24338s, 81500 KB] New best heuristic value for add: 96
+[t=1.24357s, 81500 KB] g=6, 398 evaluated, 6 expanded
+[t=1.34919s, 81500 KB] New best heuristic value for add: 95
+[t=1.34935s, 81500 KB] g=6, 454 evaluated, 6 expanded
+[t=1.3962s, 81500 KB] New best heuristic value for add: 94
+[t=1.39631s, 81500 KB] g=7, 478 evaluated, 7 expanded
+[t=1.62592s, 81500 KB] New best heuristic value for add: 93
+[t=1.62607s, 81500 KB] g=8, 595 evaluated, 8 expanded
+[t=1.79889s, 81500 KB] New best heuristic value for add: 92
+[t=1.79902s, 81500 KB] g=9, 682 evaluated, 9 expanded
+[t=3.21416s, 81500 KB] New best heuristic value for add: 91
+[t=3.21431s, 81500 KB] g=10, 1379 evaluated, 18 expanded
+[t=3.37153s, 81500 KB] New best heuristic value for add: 90
+[t=3.37165s, 81500 KB] g=11, 1460 evaluated, 19 expanded
+[t=10.1767s, 81500 KB] New best heuristic value for add: 89
+[t=10.1768s, 81500 KB] g=12, 4877 evaluated, 64 expanded
+[t=10.3401s, 81500 KB] New best heuristic value for add: 88
+[t=10.3402s, 81500 KB] g=13, 4957 evaluated, 65 expanded
+[t=25.4088s, 81500 KB] New best heuristic value for add: 87
+[t=25.409s, 81500 KB] g=14, 12427 evaluated, 170 expanded
+[t=39.8722s, 81500 KB] New best heuristic value for add: 86
+[t=39.8723s, 81500 KB] g=16, 19701 evaluated, 272 expanded
+[t=39.9547s, 81500 KB] New best heuristic value for add: 85
+[t=39.9549s, 81500 KB] g=16, 19741 evaluated, 272 expanded
+[t=40.0326s, 81500 KB] New best heuristic value for add: 84
+[t=40.0328s, 81500 KB] g=17, 19781 evaluated, 273 expanded
+[t=41.8058s, 81500 KB] New best heuristic value for add: 83
+[t=41.8061s, 81500 KB] g=19, 20670 evaluated, 286 expanded
+[t=41.9446s, 81500 KB] New best heuristic value for add: 82
+[t=41.9448s, 81500 KB] g=20, 20743 evaluated, 287 expanded
+[t=42.1009s, 81500 KB] New best heuristic value for add: 81
+[t=42.1011s, 81500 KB] g=21, 20819 evaluated, 288 expanded
+[t=42.3002s, 81500 KB] New best heuristic value for add: 80
+[t=42.3004s, 81500 KB] g=22, 20922 evaluated, 289 expanded
+Peak memory: 134712 KB
+caught signal 24 -- exiting
+Time limit has been reached.
+Remove intermediate file output.sas
+search exit code: 23
+
+Driver aborting after search
