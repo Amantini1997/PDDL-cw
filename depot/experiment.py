@@ -7,19 +7,19 @@ import subprocess
 copyfile("student.Dockerfile.add", "student.Dockerfile")
 
 #Run Additive heuristic over 22 problem files
-for i in range(2,23):
+for i in range(1,23):
     problem = "instance-%d.pddl" % i
     copyfile(problem, "problem.pddl")
     subprocess.call([r'build.bat'])
-    subprocess.check_output("run.bat > instance-%d-30m-2G-add.txt" % i, shell=True)
+    subprocess.call("run.bat > instance-%d-30m-2G-add.txt 2>&1" % i, shell=True)
     print("Instance %d complete for Additive" % i)
 
 #Switch to running Causal Graph search
 copyfile("student.Dockerfile.csg", "student.Dockerfile")
 
-for i in range(2,23):
+for i in range(1,23):
     problem = "instance-%d.pddl" % i
     copyfile(problem, "problem.pddl")
     subprocess.call([r'build.bat'])
-    subprocess.check_output("run.bat > instance-%d-30m-2G-csg.txt" % i, shell=True)
+    subprocess.call("run.bat > instance-%d-30m-2G-csg.txt 2>&1" % i, shell=True)
     print("Instance %d complete for Causal Graph" % i)
