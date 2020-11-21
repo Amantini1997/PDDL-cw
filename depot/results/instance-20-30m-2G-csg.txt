@@ -1,0 +1,140 @@
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker rm aipdocker 
+aipdocker
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>set /p version= 0<VERSION 
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker run --name aipdocker -it aip:0.1 
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799.92s
+INFO     translator memory limit: 2048 MB
+INFO     translator command line string: /usr/bin/python3 /src/fd/builds/release/bin/translate/translate.py ./domain.pddl ./problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.006s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.006s wall-clock]
+Preparing model... [0.000s CPU, 0.004s wall-clock]
+Generated 43 rules.
+Computing model... [0.250s CPU, 0.244s wall-clock]
+7130 relevant atoms
+5437 auxiliary atoms
+12567 final queue length
+27375 total queue pushes
+Completing instantiation... [0.660s CPU, 0.668s wall-clock]
+Instantiating: [0.920s CPU, 0.928s wall-clock]
+Computing fact groups...
+Finding invariants...
+16 initial candidates
+Finding invariants: [0.020s CPU, 0.017s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.003s wall-clock]
+Instantiating groups... [0.030s CPU, 0.029s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.002s wall-clock]
+Choosing groups...
+51 uncovered facts
+Choosing groups: [0.010s CPU, 0.008s wall-clock]
+Building translation key... [0.000s CPU, 0.002s wall-clock]
+Computing fact groups: [0.080s CPU, 0.073s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.040s CPU, 0.033s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.005s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.030s CPU, 0.029s wall-clock]
+Translating task: [0.770s CPU, 0.778s wall-clock]
+8070 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+70 propositions removed
+Detecting unreachable propositions: [0.400s CPU, 0.386s wall-clock]
+Reordering and filtering variables...
+67 of 67 variables necessary.
+48 of 67 mutex groups necessary.
+5894 of 5894 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.150s CPU, 0.155s wall-clock]
+Translator variables: 67
+Translator derived variables: 0
+Translator facts: 773
+Translator goal facts: 14
+Translator mutex groups: 48
+Translator total mutex groups size: 993
+Translator operators: 5894
+Translator axioms: 0
+Translator task size: 52919
+Translator peak memory: 72460 KB
+Writing output... [0.160s CPU, 0.160s wall-clock]
+Done! [2.550s CPU, 2.557s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1797.22s
+INFO     search memory limit: 2048 MB
+INFO     search command line string: /src/fd/builds/release/bin/downward --search 'astar(cg())' --internal-plan-file plan.txt < output.sas
+[t=3.6415e-05s, 55864 KB] reading input...
+[t=0.0436631s, 58796 KB] done reading input!
+[t=0.0465723s, 59060 KB] Initializing causal graph heuristic...
+[t=0.0468046s, 59060 KB] Initializing heuristic cache... building causal graph...done! [t=0.0158076s]
+[t=0.0649179s, 59852 KB] done!
+[t=0.100847s, 63788 KB] Building successor generator...done!
+[t=0.107779s, 63788 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.107865s, 63788 KB] time for successor generation creation: 0.00591469s
+[t=0.108739s, 63788 KB] Variables: 67
+[t=0.108941s, 63788 KB] FactPairs: 773
+[t=0.109053s, 63788 KB] Bytes per state: 28
+[t=0.109678s, 63788 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.110912s, 63788 KB] New best heuristic value for cg: 52
+[t=0.111016s, 63788 KB] g=0, 1 evaluated, 0 expanded
+[t=0.111087s, 63788 KB] f = 52, 1 evaluated, 0 expanded
+[t=0.11117s, 63788 KB] Initial heuristic value for cg: 52
+[t=0.111494s, 63788 KB] pruning method: none
+[t=0.124578s, 63788 KB] New best heuristic value for cg: 51
+[t=0.124839s, 63788 KB] g=1, 30 evaluated, 1 expanded
+[t=0.128401s, 63788 KB] New best heuristic value for cg: 50
+[t=0.128499s, 63788 KB] g=1, 32 evaluated, 1 expanded
+[t=0.143142s, 63788 KB] New best heuristic value for cg: 49
+[t=0.143264s, 63788 KB] g=2, 71 evaluated, 2 expanded
+[t=0.215254s, 63788 KB] New best heuristic value for cg: 48
+[t=0.215405s, 63788 KB] g=4, 309 evaluated, 11 expanded
+[t=0.241396s, 63788 KB] New best heuristic value for cg: 47
+[t=0.24161s, 63788 KB] g=5, 364 evaluated, 12 expanded
+[t=0.554823s, 63788 KB] f = 53, 1401 evaluated, 75 expanded
+[t=0.566074s, 63788 KB] New best heuristic value for cg: 46
+[t=0.566402s, 63788 KB] g=7, 1437 evaluated, 76 expanded
+[t=2.48327s, 63788 KB] New best heuristic value for cg: 45
+[t=2.48339s, 63788 KB] g=8, 7412 evaluated, 506 expanded
+[t=6.52015s, 63788 KB] f = 54, 21090 evaluated, 1596 expanded
+[t=6.53243s, 63788 KB] New best heuristic value for cg: 44
+[t=6.53256s, 63788 KB] g=10, 21127 evaluated, 1597 expanded
+[t=17.3996s, 65528 KB] New best heuristic value for cg: 43
+[t=17.3997s, 65528 KB] g=11, 54700 evaluated, 3925 expanded
+[t=52.3328s, 73044 KB] f = 55, 181855 evaluated, 17813 expanded, 2 reopened
+[t=52.3426s, 73044 KB] New best heuristic value for cg: 42
+[t=52.3427s, 73044 KB] g=13, 181891 evaluated, 17814 expanded, 2 reopened
+[t=67.9068s, 79440 KB] New best heuristic value for cg: 41
+[t=67.9069s, 79440 KB] g=14, 247677 evaluated, 21528 expanded, 2 reopened
+[t=67.9177s, 79440 KB] New best heuristic value for cg: 40
+[t=67.9178s, 79440 KB] g=15, 247729 evaluated, 21529 expanded, 2 reopened
+[t=384.046s, 139484 KB] f = 56, 1193939 evaluated, 135171 expanded, 218 reopened
+[t=384.064s, 139484 KB] New best heuristic value for cg: 39
+[t=384.064s, 139484 KB] g=17, 1193973 evaluated, 135172 expanded, 218 reopened
+[t=391.843s, 140288 KB] New best heuristic value for cg: 38
+[t=391.843s, 140288 KB] g=18, 1210339 evaluated, 136108 expanded, 218 reopened
+[t=1446.51s, 451892 KB] f = 57, 6289342 evaluated, 767333 expanded, 774 reopened
+[t=1446.52s, 451892 KB] New best heuristic value for cg: 37
+[t=1446.52s, 451892 KB] g=20, 6289377 evaluated, 767334 expanded, 774 reopened
+Peak memory: 611932 KB
+caught signal 24 -- exiting
+Time limit has been reached.
+Remove intermediate file output.sas
+search exit code: 23
+
+Driver aborting after search
