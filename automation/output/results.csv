@@ -1,0 +1,18 @@
+instance,domain,heuristic,plan_length,plan_cost,states_expanded,states_reopened,states_evaluated,evaluations,states_generated,dead_ends,states_expanded_ulj,states_reopened_ulj,states_evaluated_ulj,states_generated_ulj,registered_states,hash_set_load_factor,hash_set_resizes,search_time,total_time,peak_memory
+agricola-opt18-strips - p01.pddl,agricola-opt18-strips,add,56,1118,5715,0,6691,6691,14435,2,0,0,1,0,6691,0.816772,13,3.19996,3.35903,77648
+agricola-opt18-strips - p01.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p02.pddl,agricola-opt18-strips,add,56,1118,9992,0,11310,11310,31695,3,0,0,1,0,11310,0.690308,14,7.44998,7.72998,86616
+agricola-opt18-strips - p02.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p03.pddl,agricola-opt18-strips,add,56,1118,3139,0,4722,4722,8221,1126,0,0,1,0,4722,0.576416,13,5.15997,5.585,108708
+agricola-opt18-strips - p03.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p04.pddl,agricola-opt18-strips,add,71,1369,5789,0,6853,6853,14842,34,0,0,1,0,6853,0.836548,13,3.96993,4.1735,79840
+agricola-opt18-strips - p04.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p05.pddl,agricola-opt18-strips,add,67,1365,4835,0,7600,7600,13022,2161,0,0,1,0,7600,0.927734,13,7.96997,8.33997,99628
+agricola-opt18-strips - p05.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p06.pddl,agricola-opt18-strips,add,72,1370,7045,0,9707,9707,22124,1692,0,0,1,0,9707,0.592468,14,13.1699,13.6856,111920
+agricola-opt18-strips - p06.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p07.pddl,agricola-opt18-strips,add,86,1620,6012,0,9150,9150,15078,1975,0,0,1,0,9150,0.558472,14,7.36988,7.63611,85448
+agricola-opt18-strips - p07.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p08.pddl,agricola-opt18-strips,add,86,1620,6802,0,8129,8129,18768,51,0,0,1,0,8129,0.496155,14,9.91997,10.3365,106996
+agricola-opt18-strips - p08.pddl,agricola-opt18-strips,cg,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF,DNF
+agricola-opt18-strips - p09.pddl,agricola-opt18-strips,add,86,1620,10516,0,12478,12478,33008,4,0,0,1,0,12478,0.761597,14,24.1592,24.8435,126256
