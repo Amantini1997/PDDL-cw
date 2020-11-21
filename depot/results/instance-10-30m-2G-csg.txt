@@ -1,0 +1,186 @@
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker rm aipdocker 
+aipdocker
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>set /p version= 0<VERSION 
+
+C:\Users\Spencer\Documents\GitHub\aip-tools-2020>docker run --name aipdocker -it aip:0.1 
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799.9s
+INFO     translator memory limit: 2048 MB
+INFO     translator command line string: /usr/bin/python3 /src/fd/builds/release/bin/translate/translate.py ./domain.pddl ./problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.020s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.006s wall-clock]
+Preparing model... [0.010s CPU, 0.003s wall-clock]
+Generated 43 rules.
+Computing model... [0.040s CPU, 0.045s wall-clock]
+1215 relevant atoms
+1128 auxiliary atoms
+2343 final queue length
+4343 total queue pushes
+Completing instantiation... [0.090s CPU, 0.085s wall-clock]
+Instantiating: [0.140s CPU, 0.141s wall-clock]
+Computing fact groups...
+Finding invariants...
+16 initial candidates
+Finding invariants: [0.010s CPU, 0.016s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.020s CPU, 0.010s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+30 uncovered facts
+Choosing groups: [0.000s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.030s CPU, 0.034s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.010s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.005s wall-clock]
+Translating task: [0.100s CPU, 0.101s wall-clock]
+1080 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+38 propositions removed
+Detecting unreachable propositions: [0.060s CPU, 0.062s wall-clock]
+Reordering and filtering variables...
+32 of 32 variables necessary.
+24 of 32 mutex groups necessary.
+816 of 816 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.020s CPU, 0.026s wall-clock]
+Translator variables: 32
+Translator derived variables: 0
+Translator facts: 204
+Translator goal facts: 4
+Translator mutex groups: 24
+Translator total mutex groups size: 252
+Translator operators: 816
+Translator axioms: 0
+Translator task size: 7332
+Translator peak memory: 44260 KB
+Writing output... [0.010s CPU, 0.024s wall-clock]
+Done! [0.400s CPU, 0.400s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1799.38s
+INFO     search memory limit: 2048 MB
+INFO     search command line string: /src/fd/builds/release/bin/downward --search 'astar(cg())' --internal-plan-file plan.txt < output.sas
+[t=0.000263344s, 55864 KB] reading input...
+[t=0.00581614s, 56192 KB] done reading input!
+[t=0.0123603s, 56456 KB] Initializing causal graph heuristic...
+[t=0.0124841s, 56456 KB] Initializing heuristic cache... building causal graph...done! [t=0.00189185s]
+[t=0.0183476s, 65960 KB] done!
+[t=0.0235187s, 66356 KB] Building successor generator...done!
+[t=0.0248379s, 66356 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.024916s, 66356 KB] time for successor generation creation: 0.000991123s
+[t=0.0251141s, 66356 KB] Variables: 32
+[t=0.0252723s, 66356 KB] FactPairs: 204
+[t=0.0254381s, 66356 KB] Bytes per state: 12
+[t=0.0260133s, 66356 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0266134s, 66356 KB] New best heuristic value for cg: 16
+[t=0.0267664s, 66356 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0268646s, 66356 KB] f = 16, 1 evaluated, 0 expanded
+[t=0.0269776s, 66356 KB] Initial heuristic value for cg: 16
+[t=0.02711s, 66356 KB] pruning method: none
+[t=0.0280632s, 66356 KB] New best heuristic value for cg: 15
+[t=0.0281311s, 66356 KB] g=1, 14 evaluated, 1 expanded
+[t=0.0288768s, 66356 KB] f = 17, 31 evaluated, 2 expanded
+[t=0.0349173s, 66356 KB] f = 18, 179 evaluated, 26 expanded
+[t=0.036431s, 66356 KB] New best heuristic value for cg: 14
+[t=0.036522s, 66356 KB] g=4, 200 evaluated, 32 expanded
+[t=0.0539408s, 66356 KB] f = 19, 647 evaluated, 129 expanded
+[t=0.0883882s, 66356 KB] New best heuristic value for cg: 13
+[t=0.0885595s, 66356 KB] g=5, 1472 evaluated, 306 expanded
+[t=0.0895479s, 66356 KB] New best heuristic value for cg: 12
+[t=0.0897239s, 66356 KB] g=6, 1488 evaluated, 307 expanded
+[t=0.0978111s, 66356 KB] New best heuristic value for cg: 11
+[t=0.0980198s, 66356 KB] g=8, 1663 evaluated, 326 expanded
+[t=0.0991931s, 66356 KB] New best heuristic value for cg: 10
+[t=0.0993006s, 66356 KB] g=9, 1685 evaluated, 327 expanded
+[t=0.141814s, 66356 KB] f = 20, 2622 evaluated, 521 expanded
+[t=0.298029s, 66628 KB] New best heuristic value for cg: 9
+[t=0.298211s, 66628 KB] g=10, 6336 evaluated, 1304 expanded
+[t=0.310014s, 66628 KB] New best heuristic value for cg: 8
+[t=0.310243s, 66628 KB] g=12, 6549 evaluated, 1330 expanded
+[t=0.311659s, 66628 KB] New best heuristic value for cg: 7
+[t=0.311748s, 66628 KB] g=13, 6571 evaluated, 1331 expanded
+[t=0.476673s, 66752 KB] f = 21, 9731 evaluated, 1988 expanded
+[t=0.492664s, 66752 KB] New best heuristic value for cg: 6
+[t=0.492837s, 66752 KB] g=15, 10166 evaluated, 2078 expanded
+[t=0.493964s, 66752 KB] New best heuristic value for cg: 5
+[t=0.494085s, 66752 KB] g=16, 10188 evaluated, 2079 expanded
+[t=1.11909s, 67424 KB] f = 22, 27713 evaluated, 6246 expanded, 24 reopened
+[t=1.69181s, 68224 KB] New best heuristic value for cg: 4
+[t=1.69199s, 68224 KB] g=18, 45088 evaluated, 10227 expanded, 25 reopened
+[t=2.51421s, 69524 KB] New best heuristic value for cg: 3
+[t=2.51435s, 69524 KB] g=19, 67938 evaluated, 15887 expanded, 50 reopened
+[t=2.51512s, 69524 KB] New best heuristic value for cg: 2
+[t=2.51522s, 69524 KB] g=20, 67960 evaluated, 15888 expanded, 50 reopened
+[t=2.82072s, 69820 KB] f = 23, 77148 evaluated, 18552 expanded, 90 reopened
+[t=6.60205s, 74740 KB] f = 24, 188762 evaluated, 49676 expanded, 428 reopened
+[t=6.61836s, 74740 KB] New best heuristic value for cg: 1
+[t=6.61846s, 74740 KB] g=23, 189482 evaluated, 49846 expanded, 428 reopened
+[t=6.61901s, 74740 KB] New best heuristic value for cg: 0
+[t=6.61916s, 74740 KB] g=24, 189500 evaluated, 49847 expanded, 428 reopened
+[t=6.61922s, 74740 KB] Solution found!
+[t=6.61929s, 74740 KB] Actual search time: 6.59211s
+lift hoist1 crate0 pallet1 depot1 (1)
+lift hoist2 crate4 pallet2 depot2 (1)
+load hoist2 crate4 truck1 depot2 (1)
+drive truck1 depot2 distributor2 (1)
+lift hoist5 crate3 crate2 distributor2 (1)
+load hoist5 crate3 truck1 distributor2 (1)
+lift hoist5 crate2 pallet5 distributor2 (1)
+load hoist5 crate2 truck1 distributor2 (1)
+unload hoist5 crate4 truck1 distributor2 (1)
+drop hoist5 crate4 pallet5 distributor2 (1)
+drive truck1 distributor2 depot0 (1)
+lift hoist0 crate1 pallet0 depot0 (1)
+load hoist0 crate1 truck1 depot0 (1)
+unload hoist0 crate3 truck1 depot0 (1)
+drive truck1 depot0 distributor0 (1)
+drop hoist0 crate3 pallet0 depot0 (1)
+lift hoist3 crate5 pallet3 distributor0 (1)
+load hoist3 crate5 truck1 distributor0 (1)
+unload hoist3 crate2 truck1 distributor0 (1)
+drop hoist3 crate2 pallet3 distributor0 (1)
+load hoist1 crate0 truck0 depot1 (1)
+drive truck0 depot1 distributor2 (1)
+unload hoist5 crate0 truck0 distributor2 (1)
+drop hoist5 crate0 crate4 distributor2 (1)
+[t=6.61941s, 74740 KB] Plan length: 24 step(s).
+[t=6.61941s, 74740 KB] Plan cost: 24
+[t=6.61941s, 74740 KB] Expanded 49848 state(s).
+[t=6.61941s, 74740 KB] Reopened 428 state(s).
+[t=6.61941s, 74740 KB] Evaluated 189500 state(s).
+[t=6.61941s, 74740 KB] Evaluations: 189500
+[t=6.61941s, 74740 KB] Generated 772028 state(s).
+[t=6.61941s, 74740 KB] Dead ends: 0 state(s).
+[t=6.61941s, 74740 KB] Expanded until last jump: 49676 state(s).
+[t=6.61941s, 74740 KB] Reopened until last jump: 428 state(s).
+[t=6.61941s, 74740 KB] Evaluated until last jump: 188762 state(s).
+[t=6.61941s, 74740 KB] Generated until last jump: 769381 state(s).
+[t=6.61941s, 74740 KB] Number of registered states: 189500
+[t=6.61941s, 74740 KB] Int hash set load factor: 189500/262144 = 0.722885
+[t=6.61941s, 74740 KB] Int hash set resizes: 18
+[t=6.61941s, 74740 KB] Search time: 6.5934s
+[t=6.61941s, 74740 KB] Total time: 6.61941s
+Solution found.
+Peak memory: 74740 KB
+Remove intermediate file output.sas
+search exit code: 0
+
