@@ -42,3 +42,15 @@ This is likely due to a number of factors. We have tested less problem files and
 
 ![](images/unsolved-domain-comparison-table.png)
 ![](images/helmert-2004-domain-comparison-table.png)
+
+## Summary of Analysis
+
+Data used: *results-30-mins-temp*
+
+### Key findings:
+* For the instances which are solved by both Add and CG, CG is able to find solutions quicker in most domains (exception: depot).
+* CG is consistently able to produce shorter plan lengths
+* CG has higher peak memory values - high instantaneous memory usage, does not indicate overall memory usage
+* Number of unsolved instances, dead ends and evaluations remain domain specific
+
+![](images/Summary.png)
