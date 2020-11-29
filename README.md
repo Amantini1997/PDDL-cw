@@ -5,17 +5,17 @@
 [original paper](https://ai.dmi.unibas.ch/papers/helmert-dissertation.pdf)
 FD is a planner which relies on 2 concepts:
 1. **causal graph**: intuitively, as humans, we tend to approach problems in a hierarchical fashion. Imagine the 2 cities problem:
-    <img src="../img/domain_graph.png">
+    <img src="./img/domain_graph.png">
 
     the most intuitive way for us to consider the problem is creating this abstraction:
 
-    <img src="../img/causal_Dependencies.png">
+    <img src="./img/causal_Dependencies.png">
 
     This is a causal graph, meaning that each **target** depends on a **source**, so there is a causal dependency.
 
 2. **multi-value variables** (SAT): the above represented causal graph is what a human would abstract the problem, but using STRIPS (aka boolean variables) would result in this graph:
 
-    <img src="../img/STRIPS_causal_Dependencies.png">
+    <img src="./img/STRIPS_causal_Dependencies.png">
 
     This more complex graph is due to the fact that each variable can have many representations.
     > e.g. car1 has 4 prepositions: at A, at B, at C at D even though only one of them can and must be true at the same time.
@@ -51,7 +51,7 @@ The causal graph heuristic requires causal graphs to be acyclic, a requirement w
 # How the $h^{cg}$ is calculated
 Imagine a grid domain 3 x 2 with a robot starting at (1, 1), a key at (3, 2) and a door at (2, 1) to be opened with such key. The 3 DTGs should look like this:
 
-<img src="./img/../../img/DTG_for_CG.png">
+<img src="./img/DTG_for_CG.png">
 
 Consider an initial state where the robot is at location ⟨1, 1⟩, the key is at location ⟨3, 2⟩, and the door is locked. We represent this by placing pebbles on the appropriate vertices of the three domain transition graphs. We want to move the pebble in the domain transition graph of the key to location ⟨2, 1⟩. This can be done by moving the robot pebble to vertex ⟨1, 2⟩, then ⟨2, 2⟩, then ⟨3, 2⟩, moving the key pebble to the vertex carried, moving the robot pebble back to vertex ⟨2, 2⟩, moving the door pebble to open, moving the robot pebble to vertex ⟨2, 1⟩ and finally moving the key pebble to vertex ⟨2, 1⟩.
 
