@@ -67,7 +67,7 @@ If it turns out that all states at the search frontier are dead ends, we cannot 
 # Questions
 
 **1) Why does h add find so many dead ends?**
-> Due to the way the hcg operates, finding dead end is fairly trivial, the issue is actually the opposite, that is, false dead ends (h = \infty) can wrongly identified as real dead ends. When this happens, the algorithm is forced to run a check and, eventually, to use the FF heuristics, which is complete, although it takes longer.
+> Due to the way the hcg operates, finding dead end is fairly trivial, the issue is actually the opposite, that is, false dead ends (h = $\infty$) can wrongly identified as real dead ends. When this happens, the algorithm is forced to run a check and, eventually, to use the FF heuristics, which is complete, although it takes longer.
 > In essence, the algorithm, due to the use of DTGs and the causal graph, is very likely to find dead ends, but is not able to identify and seeks for help.
 
 **2) Why does it take longer to hcg to find the solution?**
